@@ -70,7 +70,7 @@ window.onload = function(){
 var size = 20
 var geometry = new THREE.SphereGeometry( size, 32, 32 )
 var material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } );
-material.map    = THREE.ImageUtils.loadTexture('http://texturelib.com/Textures/ground/stone%20ground/ground_stone_ground_0029_02_preview.jpg')
+material.map    = THREE.ImageUtils.loadTexture('ground.jpg')
 var planet = new THREE.Mesh( geometry, material );
 
 
