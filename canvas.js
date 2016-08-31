@@ -1,11 +1,17 @@
 /*
 Человечек Стив
 1. Нарисовать куб готово
-2. человечек
+2. человечек готово
+	текстура готово
+	движение
 3. мир
-
-
+	планеты
+		сфера готово
+		освещение
+	земля
 */
+
+
 window.onload = function(){
 	var scene = new THREE.Scene();
 	var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -21,7 +27,9 @@ window.onload = function(){
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
-	var cube = {}
+	
+
+	/*var planet = {}
 	var manager = new THREE.LoadingManager();
 	manager.onProgress = function ( item, loaded, total ) {
 
@@ -45,7 +53,7 @@ window.onload = function(){
 	'Steve.obj',
 	// Function when resource is loaded
 	function ( object ) {
-		cube = object
+		planet = object
 		object.traverse( function ( child ) {
 
 			if ( child instanceof THREE.Mesh ) {
@@ -58,11 +66,20 @@ window.onload = function(){
 			scene.add( object );
 		}
 	);
+*/
+var size = 20
+var geometry = new THREE.SphereGeometry( size, 32, 32 )
+var material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } );
+material.map    = THREE.ImageUtils.loadTexture('http://texturelib.com/Textures/ground/stone%20ground/ground_stone_ground_0029_02_preview.jpg')
+var planet = new THREE.Mesh( geometry, material );
+
+
+scene.add( planet );
 
 	camera.position.z = 75;
 	function render() {
-		requestAnimationFrame( render );
-		cube.rotation.y += 0.01;
+		//requestAnimationFrame( render );
+		planet.rotation.y += 0.01;
 		renderer.render( scene, camera );
 	}
 	render();
