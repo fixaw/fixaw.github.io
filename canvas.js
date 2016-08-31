@@ -62,8 +62,8 @@ window.onload = function(){
 	camera.position.z = 5;
 	function render() {
 		requestAnimationFrame( render );
-		/*cube.rotation.x += 0.01;
-		cube.rotation.y += 0.01;*/
+		cube.rotation.x += 0.01;
+		cube.rotation.y += 0.01;
 		renderer.render( scene, camera );
 	}
 	render();
