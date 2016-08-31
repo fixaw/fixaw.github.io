@@ -31,7 +31,7 @@ window.onload = function(){
 
 	var texture = new THREE.Texture();
 	var loader = new THREE.ImageLoader( manager );
-	loader.load( 'steve.png', function ( image ) {
+	loader.load( 'Stive.png', function ( image ) {
 
 		texture.image = image;
 		texture.needsUpdate = true;
