@@ -10,6 +10,14 @@ window.onload = function(){
 	var scene = new THREE.Scene();
 	var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
+	var ambient = new THREE.AmbientLight( 0x101030 );
+	scene.add( ambient );
+
+	var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+	directionalLight.position.set( 0, 0, 1 );
+	scene.add( directionalLight );
+
+
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
